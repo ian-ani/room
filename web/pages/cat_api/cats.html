@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="cats.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+        <link rel="icon" type="image/x-icon" href="../../img/cat.gif">
+        <title>Imágenes de gatos</title>
+    </head>
+    <body>
+        <header >
+            <p class="back"><a href="../../index.html"><img src="../../img/back.gif" id="back_button" title="Botón volver atrás"></a></p>
+        </header>
+        <div id="neko">
+            <script id="neko">NekoType="marmalade"</script>
+            <h1 id=nl>
+                <script src="https://webneko.net/n20171213.js"></script>
+                <a href="https://webneko.net">Neko</a></h1>
+        </div>
+        <div class="content">
+                <script>
+                    const headers = new Headers({
+                        "Content-Type": "application/json",
+                        "x-api-key": "DEMO-API-KEY"
+                    });
+                    
+                    var requestOptions = {
+                        method: 'GET',
+                        headers: headers,
+                        redirect: 'follow'
+                    };
+                    
+                    fetch("https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1", requestOptions)
+                        .then(response => response.json())
+                        .then(result => {
+                            console.log(result[0].breeds[0].name); /* se accede a cada valor como en Python */
+                            console.log(result[0].url);
+                            console.log(result[0].breeds[0].wikipedia_url);
+
+                            let imgElement = document.querySelector("#catImage");
+                            imgElement.src = result[0].url;
+
+                            let breedElement = document.querySelector("#nameBreed");
+                            breedElement.textContent = result[0].breeds[0].name;
+
+                            let wikipediaLink = document.querySelector("#breedLink");
+                            wikipediaLink.href = result[0].breeds[0].wikipedia_url;
+                        })
+                        .catch(error => console.log('error', error));
+                </script>
+                <img id="catImage" src="" alt="Imagen del gato">
+                <img src ="../../img/paw.png" id="paw_icon" title="Botón mostrar otro gato" onclick="window.location.reload();">
+                <p>Este gato es un <i id="nameBreed"></i> y puedes saber más <a href="" id="breedLink">aquí</a>.</p>
+        </div>
+        <a href="https://thecatapi.com"><img src="../../img/help.png" id="help_icon" title="Botón ayuda"></a>
+    </body>
+</html>

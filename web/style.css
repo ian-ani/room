@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+	max-width: 80%;
+	max-height: 100%;
+	position: relative;
+	color: #000;
+	font-family: "Anta", "Lucida Console", sans-serif;
+    background-image: url("img/brick.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+#room {
+    display: block;
+	top: 12%;
+	height: 80vh;
+	position: relative;
+	margin: 2% 2% 0 2%;
+    border-style: ridge;
+    border-width: 10px;
+    border-color: #ceab78;
+    background-image: url("img/room_bg.PNG");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#conversor img {
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    margin: 16% 22% 0 0;
+    max-width: 22%;
+    max-height: 22%;
+}
+
+#conversor img:hover {
+    border: 1px black solid;
+    box-shadow: 0 6px 20px 0 black;
+}
+
+#tictactoe img {
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    margin: 32% 0 0 6%;
+    max-width: 12%;
+    max-height: 12%;
+}
+
+#tictactoe img:hover{
+    border: 1px black solid;
+    box-shadow: 0 6px 20px 0 black;
+}
+
+#cats img {
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    margin: 0 0 6% 25%;
+    max-width: 20%;
+    max-height: 20%;
+}
+
+#cats img:hover {
+    border: 1px black solid;
+    box-shadow: 0 6px 20px 0 black;
+}
+
+#calculator img {
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    margin: 30% 16% 0 0;
+    max-width: 8%;
+    max-height: 8%;
+}
+
+#calculator img:hover {
+    border: 1px black solid;
+    box-shadow: 0 6px 20px 0 black;
+}
+
+#github img {
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    margin: 14% 0 0 5%;
+    max-width: 12%;
+    max-height: 12%;
+}
+
+#github img:hover{
+    padding: 2px;
+    border: 1px black solid;
+    box-shadow: 0 6px 20px 0 black;
+}
+
+nav {
+    display: table;
+    text-align: center;
+    bottom: 0;
+    padding: 0.75%;
+    position: absolute;
+    background-image: linear-gradient(#808080, #575757);
+    /*background-color: grey;*/
+    width: 100%;
+    border-style: ridge;
+}
+
+nav ul li {
+    padding: 2%;
+    margin: 0.5%;
+    list-style: none;
+    display: inline;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    border-style: ridge;
+    background-image: linear-gradient(#808080, #575757);
+    box-shadow: 0 6px 20px 0 black;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+nav ul li a img {
+    max-width: 3%;
+    max-height: 3%;
+}
+
+#help_icon {
+    position: fixed;
+    margin: 2% 3% 2% 2%;
+    right: 0;
+    bottom: 0;
+    max-width: 5%;
+    max-height: 5%;
+}

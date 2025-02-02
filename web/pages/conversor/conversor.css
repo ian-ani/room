@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+	max-width: 80%;
+	height: 100vh;
+	position: relative;
+	color: #000;
+	font-family: sans-serif, "Lucida Console";
+    overflow-y: hidden;
+    background-color: #4e2c11;
+    background-image: url("../../img/room_tictactoe.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header h1 {
+    margin-top: 2%;
+    text-align: center;
+    text-shadow: 1px 1px;
+    font-family: "Anta", "Lucida Console", sans-serif;
+}
+
+.pantalla {
+    display: block;
+	height: 80vh;
+	position: relative;
+	margin: 2% 2% 0 2%;
+    border-style: inset;
+    border-width: 50px;
+    border-color: rgb(14, 17, 19);
+}
+
+.pantalla aside ul {
+    display: table;
+    padding: 2%;
+    position: absolute;
+    width: 15%;
+    height: 100%;
+    background-color: rgb(192, 192, 192);
+    border: 2px rgb(252, 252, 252) ridge;
+}
+
+.pantalla aside ul li {
+    padding: 5%;
+    margin-top: 2%;
+    list-style: none;
+    border-style: ridge;
+}
+
+.pantalla aside ul li:hover {
+    background-color: rgb(1, 0, 128);
+    color: white;
+    cursor: pointer;
+}
+
+.pantalla aside ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.pantalla aside ul li:hover a {
+    color: white;
+}
+
+.pantalla aside ul li a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+#escritorio {
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#escritorio img {
+    margin-left: 15%;
+    width: 85%;
+    height: 100%;
+}
+
+#formulario {
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    margin: 0 0 6% 30%;
+    padding: 2%;
+    width: 50%;
+    height: 80%;
+    background-color: rgb(192, 192, 192);
+    border: 2px rgb(252, 252, 252) ridge;
+}

@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+	max-width: 80%;
+	height: 100vh;
+	position: relative;
+	color: #000;
+	font-family: "Anta", "Lucida Console", sans-serif;
+    overflow-y: hidden;
+    background-color: #4e2c11;
+    background-image: url("../../img/room_tictactoe.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    display: block;
+    /* top: 2%; */
+    /* height: 80vh; */
+    position: relative;
+    margin: 2% 2% 0 2%;
+    border-style: groove;
+    border-width: 10px;
+    border-color: #502b0c;
+    background-image: url("../../img/table.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.back {
+    display: block;
+    padding: 0.25% 0 0.25% 0;
+    margin: 2%;
+    background-color: red;
+    background-image: url("../../img/table.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    border: 2px black solid;
+}
+
+.back a {
+    text-decoration: none;
+    color: white;
+    padding: 2%;
+}
+
+h1 {
+    margin-top: 2%;
+    text-align: center;
+    text-shadow: 1px 1px;
+}
+
+form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    /*background-color: yellow;*/
+}
+
+form input {
+    margin: 2% 0 1% 0;
+    padding: 2%;
+}
+
+#playerX {
+    color: red;
+    margin: 2% 2% 1% 2%;
+    text-shadow: 1px 1px black;
+    font-size: 18px;
+}
+
+#playerO {
+    color:blue;
+    margin: 2% 2% 1% 2%;
+    text-shadow: 1px 1px black;
+    font-size: 18px;
+}
+
+#board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	height: 50vh;
+    /*width: 50vh; si no se arregla borrar esto */
+	position: relative;
+	margin: 2% 2% 0 2%;
+    /*border-style: double;*/
+}
+
+/*#board td {
+    border: 1px solid;
+    padding: 0;
+    width: 100px;
+    height: 100px;
+    font-size: 70px;
+    color: rgb(40, 43, 48);
+    background-color: red;
+}*/
+
+.cell {
+    border: 2px solid;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 70px;
+    color: rgb(40, 43, 48);
+    background-image: linear-gradient(to bottom right, #ceab78, #81653a);
+    padding: 0;
+    margin: 2%;
+    text-shadow: 2px 2px;
+    box-shadow: 0 6px 6px 0 black;
+}
+
+.clean {
+    display: block;
+    margin: 5% auto 0 auto;
+    padding: 0.7%;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    cursor: pointer;
+}
+
+.clean:hover {
+    background-image: linear-gradient(#cfcfcf, #ffffff, #cfcfcf);
+}
+
+.clean:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+#help_icon {
+    position: fixed;
+    margin: 2% 3% 2% 2%;
+    right: 0;
+    bottom: 0;
+    max-width: 5%;
+    max-height: 5%;
+}
