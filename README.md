@@ -1,4 +1,4 @@
-![Cover image](https://github.com/ian-ani/room/cover.png)
+![Cover image](https://github.com/ian-ani/room/blob/main/cover.png)
 
 ## Acerca de este repositorio
 
