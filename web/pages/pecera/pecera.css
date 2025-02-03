@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../../img/fish-tank-bg.jpg");
+    overflow: hidden;
+}
+
+.back {
+    z-index: 2;
+    margin: 1% 2% 2% 3%;
+    position: absolute;
+    font-family: "Lucida Console", sans-serif;
+}
+
+#pecera {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+#goldfish {
+    margin: 2% auto 0% auto;
+    position: relative;
+    width: clamp(50%, 75%, 100%);
+    height: 20%;
+    /* background-color: red; */
+}
+
+#goldfish img {
+    position: absolute;
+    max-width: 50%;
+    animation: moveGoldfish 20s infinite linear;
+}
+
+@keyframes moveGoldfish {
+    0% {left: 0%; top: 60%; transform: scaleX(1);}
+    25% {left: 50%; top: 0%; transform: scaleX(1);}
+    50% {left: 70%; top: 30%; transform: scaleX(1);}
+    50.1% {left: 70%; top: 30%; transform: scaleX(-1);}
+    75% {left: 50%; top: 0%; transform: scaleX(-1);}
+    100% {left: 0%; top: 60%; transform: scaleX(-1);}
+}
+
+#tetra {    
+    margin: 5% auto 0% auto;
+    position: relative;
+    width: clamp(25%, 50%, 75%);
+    height: 20%;
+    /* background-color: blue; */
+}
+
+#tetra img {
+    position: absolute;
+    max-width: 30%;
+    animation: moveTetra 20s infinite linear;
+}
+
+@keyframes moveTetra {
+    0% {left: 0%; top: 0%; transform: scaleX(1);}
+    25% {left: 25%; top: 10%; transform: scaleX(1);}
+    50% {left: 50%; top: 20%; transform: scaleX(1);}
+    50.1% {left: 50%; top: 20%; transform: scaleX(-1);}
+    75% {left: 25%; top: 10%; transform: scaleX(-1);}
+    100% {left: 0%; top: 0%; transform: scaleX(-1);}
+}
+
+#guppy {    
+    margin: 10% auto 0% auto;
+    position: relative;
+    /* background-color: green; */
+    width: clamp(50%, 75%, 100%);
+    height: 20%;}
+
+#guppy img {
+    position: absolute;
+    max-width: 25%;
+    animation: moveGuppy 30s infinite linear;
+}
+
+@keyframes moveGuppy {
+    0% {left: 0%; bottom: 0%; transform: scaleX(1);}
+    25% {left: 50%; bottom: 25%; transform: scaleX(1);}
+    50% {left: 80%; bottom: 15%; transform: scaleX(1);}
+    50.1% {left: 80%; bottom: 15%; transform: scaleX(-1);}
+    75% {left: 50%; bottom: 25%; transform: scaleX(-1);}
+    100% {left: 0%; bottom: 0%; transform: scaleX(-1);}
+}

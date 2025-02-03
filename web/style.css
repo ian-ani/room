@@ -107,6 +107,21 @@ body {
     box-shadow: 0 6px 20px 0 black;
 }
 
+#pecera img {
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    margin: 28% 4% 0 0;
+    max-width: 50%;
+    max-height: 50%;
+}
+
+#pecera img:hover {
+    border: 1px black solid;
+    box-shadow: 0 6px 20px 0 black;
+}
+
 nav {
     display: table;
     text-align: center;
