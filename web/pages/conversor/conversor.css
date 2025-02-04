@@ -91,9 +91,57 @@ header h1 {
     position: absolute;
     bottom: 0;
     margin: 0 0 6% 30%;
-    padding: 2%;
+    padding: 2% auto;
     width: 50%;
     height: 80%;
     background-color: rgb(192, 192, 192);
     border: 2px rgb(252, 252, 252) ridge;
+    justify-content: center;
+}
+
+.convert_title {
+    margin: 2%;
+}
+
+#defecto {
+    margin: 4%;
+    overflow: auto;
+}
+
+#defecto ul {
+    margin: 4%;
+}
+
+#defecto code {
+    font-size: 1.25em;
+}
+
+#formulario div {
+    position: absolute;
+    margin: 5% auto 0 auto;
+    width: 90%;
+}
+
+#formulario div form {
+    padding: 2% auto;
+}
+
+#formulario div form label, input, select {
+    padding: 2%;
+    display: block;
+    width: 100%;
+}
+
+#formulario div form br {
+    margin-top: clamp(10%, 20%, 25%);
+}
+
+#binario form output {
+    display: block;
+    background-color: red;
+}
+
+.buttonOK {
+    position: relative;
+    margin-top: 10%;
 }

@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anta">
         <link rel="icon" type="image/x-icon" href="../../img/binary.png">
         <title>Conversor - sistema de numeración</title>
+
+        <script src="conversor.js"></script>
+        <script src="showDivs.js"></script>
     </head>
     <body>
         <header>
@@ -16,13 +19,99 @@
             <aside>
                 <ul>
                     <li><a href="../../index.html">Volver atrás</a></li>
-                    <li>B</li>
+                    <br>
+                    <li onclick="showBinary()">Binario</li>
+                    <li onclick="showOctal()">Octal</li>
+                    <li onclick="showDecimal()">Decimal</li>
+                    <li onclick="showHexadecimal()">Hexadecimal</li>
                 </ul>
             </aside>
             <div id="escritorio">
                 <img src="../../img/w95.jpg">
-                <div id="formulario"> <!-- no se cuantos formularios necesitare, si eso cambiarlo -->
-                    <p>Aquí iría un formulario.</p>
+                <div id="formulario">
+                    <div id="defecto">
+                        <p>Se puede convertir desde <b>binario, octal, decimal o hexadecimal</b> a cualquiera de las otras bases numéricas.<br>
+                        Si quieres ver cómo funciona cada conversión puedes leer al respecto en mi <a href="https://github.com/ian-ani/conversor_num/">cuaderno de Jupyter (Python)</a> 
+                        o en el propio código de esta web (JS) con <b>CTRL+U</b>.</p>
+                        <ul>
+                            <li><b>De decimal a otra base numérica:</b> se divide el número por la base, nos quedamos con el resto de dicha división. El número (el resto) resultante a la inversa es 
+                                el número convertido.</li>
+                            <li><b>De otra base numérica a decimal:</b> <code>n * base^posicion</code></li>
+                            <li><b>Binario a octal o hexadecimal:</b> se cogen los números en grupos de 3 en 3 o de 4 en 4 (dependiendo de si queremos el primero o el segundo).</li>
+                            <li><b>Octal a binario:</b> tabla de equivalencias (p. ej. 35 es 3=011 y 5=101).</li>
+                            <li><b>Octal a hexadecimal:</b> se pasa de octal a binario, después de binario a hexadecimal.</li>
+                            <li><b>Hexadecimal a binario:</b> tabla de equivalencias (p. ej. 1E es 1=0001 y E=1110).</li>
+                            <li><b>Hexadecimal a octal:</b> se pasa de hexadecimal a binario, después de binario a octal.</li>
+                        </ul>
+                    </div>
+
+                    <div id="binario" hidden>
+                        <h2 class="convert_title">Binario</h2>
+                        <form action="">
+                            <label for="convertFrom">Convertir desde binario</label>
+                            <input type="text">
+                            <label for="convertTo">Conversión a:</label>
+                            <select name="Conversión" class="convertTo">
+                                <option value="octal">Octal</option>
+                                <option value="decimal">Decimal</option>
+                                <option value="hexadecimal">Hexadecimal</option>
+                            </select>
+                            <br>
+                            <output name="output" for="convertFrom"></output> <!-- no se ve nada hasta que haga la operacion asi que es un misterio -->
+                            <input class="buttonOk" type="submit" value="OK">
+                        </form>
+                    </div>
+
+                    <div id="octal" hidden>
+                        <h2 class="convert_title">Octal</h2>
+                        <form action="">
+                            <label for="convertFrom">Convertir desde octal</label>
+                            <input type="text" id="convertFrom">
+                            <label for="convertTo">Conversión a:</label>
+                            <select name="Conversión" class="convertTo">
+                                <option value="binario">Binario</option>
+                                <option value="decimal">Decimal</option>
+                                <option value="hexadecimal">Hexadecimal</option>
+                            </select>
+                            <br>
+                            <output name="output" for="convertFrom"></output>
+                            <input class="buttonOk" type="submit" value="OK">
+                        </form>
+                    </div>
+
+                    <div id="decimal" hidden>
+                        <h2 class="convert_title">Decimal</h2>
+                        <form action="">
+                            <label for="convertFrom">Convertir desde decimal</label>
+                            <input type="text">
+                            <label for="convertTo">Conversión a:</label>
+                            <select name="Conversión" class="convertTo">
+                                <option value="binario">Binario</option>
+                                <option value="octal">Octal</option>
+                                <option value="hexadecimal">Hexadecimal</option>
+                            </select>
+                            <br>
+                            <output name="output" for="convertFrom"></output>
+                            <input class="buttonOk" type="submit" value="OK">
+                        </form>
+                    </div>
+
+                    <div id="hexadecimal" hidden>
+                        <h2 class="convert_title">Hexadecimal</h2>
+                        <form action="">
+                            <label for="convertFrom">Convertir desde hexadecimal</label>
+                            <input type="text">
+                            <label for="convertTo">Conversión a:</label>
+                            <select name="Conversión" class="convertTo">
+                                <option value="binario">Binario</option>
+                                <option value="octal">Octal</option>
+                                <option value="decimal">Decimal</option>
+                            </select>
+                            <br>
+                            <output name="output" for="convertFrom"></output>
+                            <input class="buttonOk" type="submit" value="OK">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>      

@@ -109,12 +109,12 @@ body {
 
 #pecera img {
     display: flex;
-    z-index: 1;
+    z-index: 0;
     position: absolute;
     right: 0;
     margin: 28% 4% 0 0;
-    max-width: 50%;
-    max-height: 50%;
+    max-width: clamp(20%, 40%, 50%);
+    max-height: clamp(20%, 40%, 50%);
 }
 
 #pecera img:hover {
