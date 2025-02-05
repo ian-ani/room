@@ -9,7 +9,7 @@ function hideDefault(element) {
     divID.forEach(function(elementId) {
         let element = document.getElementById(elementId);
         if (element) {
-            element.setAttribute("hidden", true)
+            element.setAttribute("hidden", true);
         };
     });
 };

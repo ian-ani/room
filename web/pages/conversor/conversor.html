@@ -48,68 +48,68 @@
                     <div id="binario" hidden>
                         <h2 class="convert_title">Binario</h2>
                         <form action="">
-                            <label for="convertFrom">Convertir desde binario</label>
-                            <input type="text">
-                            <label for="convertTo">Conversión a:</label>
-                            <select name="Conversión" class="convertTo">
+                            <label for="getBinario">Convertir desde binario</label>
+                            <input type="text" id="getBinario">
+                            <label for="binaryTo">Conversión a:</label>
+                            <select name="Conversión" id="binaryTo">
                                 <option value="octal">Octal</option>
                                 <option value="decimal">Decimal</option>
                                 <option value="hexadecimal">Hexadecimal</option>
                             </select>
-                            <br>
-                            <output name="output" for="convertFrom"></output> <!-- no se ve nada hasta que haga la operacion asi que es un misterio -->
-                            <input class="buttonOk" type="submit" value="OK">
+                            <label for="resultado">Resultado:</label>
+                            <output name="output" for="resultado" id="outputBinario"></output>
+                            <input class="button_ok" type="button" value="OK" onclick="convertBinary()">
                         </form>
                     </div>
 
                     <div id="octal" hidden>
                         <h2 class="convert_title">Octal</h2>
                         <form action="">
-                            <label for="convertFrom">Convertir desde octal</label>
-                            <input type="text" id="convertFrom">
-                            <label for="convertTo">Conversión a:</label>
-                            <select name="Conversión" class="convertTo">
+                            <label for="getOctal">Convertir desde octal</label>
+                            <input type="text" id="getOctal">
+                            <label for="octalTo">Conversión a:</label>
+                            <select name="Conversión" id="octalTo">
                                 <option value="binario">Binario</option>
                                 <option value="decimal">Decimal</option>
                                 <option value="hexadecimal">Hexadecimal</option>
                             </select>
-                            <br>
-                            <output name="output" for="convertFrom"></output>
-                            <input class="buttonOk" type="submit" value="OK">
+                            <label for="resultado">Resultado:</label>
+                            <output name="output" for="resultado" id="outputOctal"></output>
+                            <input class="button_ok" type="button" value="OK" onclick="convertOctal()">
                         </form>
                     </div>
 
                     <div id="decimal" hidden>
                         <h2 class="convert_title">Decimal</h2>
                         <form action="">
-                            <label for="convertFrom">Convertir desde decimal</label>
-                            <input type="text">
-                            <label for="convertTo">Conversión a:</label>
-                            <select name="Conversión" class="convertTo">
+                            <label for="getDecimal">Convertir desde decimal</label>
+                            <input type="text" id="getDecimal">
+                            <label for="decimalTo">Conversión a:</label>
+                            <select name="Conversión" id="decimalTo">
                                 <option value="binario">Binario</option>
                                 <option value="octal">Octal</option>
                                 <option value="hexadecimal">Hexadecimal</option>
                             </select>
-                            <br>
-                            <output name="output" for="convertFrom"></output>
-                            <input class="buttonOk" type="submit" value="OK">
+                            <label for="resultado">Resultado:</label>
+                            <output name="output" for="resultado" id="outputDecimal"></output>
+                            <input class="button_ok" type="button" value="OK" onclick="convertDecimal()">
                         </form>
                     </div>
 
                     <div id="hexadecimal" hidden>
                         <h2 class="convert_title">Hexadecimal</h2>
                         <form action="">
-                            <label for="convertFrom">Convertir desde hexadecimal</label>
-                            <input type="text">
-                            <label for="convertTo">Conversión a:</label>
-                            <select name="Conversión" class="convertTo">
+                            <label for="getHex">Convertir desde hexadecimal</label>
+                            <input type="text" id="getHex">
+                            <label for="hexTo">Conversión a:</label>
+                            <select name="Conversión" id="hexTo">
                                 <option value="binario">Binario</option>
                                 <option value="octal">Octal</option>
                                 <option value="decimal">Decimal</option>
                             </select>
-                            <br>
-                            <output name="output" for="convertFrom"></output>
-                            <input class="buttonOk" type="submit" value="OK">
+                            <label for="resultado">Resultado:</label>
+                            <output name="output" for="resultado" id="outputHex"></output>
+                            <input class="button_ok" type="button" value="OK" onclick="convertHexadecimal()">
                         </form>
                     </div>
                 </div>

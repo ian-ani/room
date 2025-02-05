@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* margin: 0; */
+	color: #000;
+	font-family: sans-serif, "Lucida Console";
+    overflow-y: hidden;
+    background-color: purple;
+}
+
+#calculator {
+    background-color: rgba(0, 0, 0, 0); /* chapuza...*/
+    /* display: grid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 2%; */
+    min-height: 100vh;
+    /* grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px); */
+    border: solid;
+}
+
+#calculator output {
+    background-color: grey;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
+    padding: 10px;
+    width: 250px; /* no cambiar el 250px */
+    /* border: solid; */
+}
+
+#outputAnterior {
+    color: #1d1d1d;
+    font-size: 18px;
+}
+
+#outputActual {
+    font-size: 24px;
+}
+
+table {
+    background-color: #fff;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    /*width: 50vh; si no se arregla borrar esto */
+	/* position: relative; */
+	/* margin: 2% 2% 0 2%; */
+    /* border: solid; */
+}
+
+table td {
+    background-color: #bebebe;
+    width: 60px;
+    height: 60px;
+    border: solid;
+    text-align: center;
+}
+
+table td:hover {
+    background-color: #e4e4e4;
+    cursor: pointer;
+}
+

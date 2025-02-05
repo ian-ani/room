@@ -1,3 +1,5 @@
+/* CONVERSIONES */
+
 /* Decimal a binario, octal o hexadecimal */
 
 function fromDecimal(numero, base) {
@@ -12,7 +14,7 @@ function fromDecimal(numero, base) {
         };
         while (numero >= 1) {
             let resto = Math.floor(numero % divisor);
-            let numero = numero / divisor;
+            numero = numero / divisor; // cuidado que esto estaba con un let y eso es incorrecto
 
             resultado = TABLA[resto] + String(resultado);
         };
@@ -208,6 +210,90 @@ function hexToOctal(numero) {
 
 // hexToOctal("C");
 
-/* En el cuaderno de Python tengo puesto que la última llamada
-la haga a una función que no es la que tiene que hacer para
-la comprobacion, cambiarlo */
+/* LLAMAR FUNCIONES PARA EL HTML */
+
+function convertBinary() {
+    let numero = document.getElementById("getBinario").value;
+    let output = document.getElementById("outputBinario");
+    let selector = document.getElementById("binaryTo");
+    let valorSelector = selector.value;
+    let resultado;
+
+    switch (valorSelector) {
+        case "octal":
+            resultado = binaryToOctal(numero);
+            break;
+        case "decimal":
+            resultado = toDecimal(numero, 2);
+            break;
+        case "hexadecimal":
+            resultado = binaryToHex(numero);
+            break;
+    };
+    output.textContent = resultado;
+};
+
+function convertOctal() {
+    let numero = document.getElementById("getOctal").value;
+    let output = document.getElementById("outputOctal");
+    let selector = document.getElementById("octalTo");
+    let valorSelector = selector.value;
+    let resultado;
+
+    switch (valorSelector) {
+        case "binario":
+            resultado = octalToBin(numero);
+            break;
+        case "decimal":
+            resultado = toDecimal(numero, 8);
+            break;
+        case "hexadecimal":
+            resultado = octalToHex(numero);
+            break;
+    };
+    output.textContent = resultado;
+};
+
+function convertDecimal() {
+    let numero = document.getElementById("getDecimal").value;
+    let output = document.getElementById("outputDecimal");
+    let selector = document.getElementById("decimalTo");
+    let valorSelector = selector.value;
+    let resultado;
+
+    switch (valorSelector) {
+        case "binario":
+            resultado = fromDecimal(numero, 2);
+            break;
+        case "octal":
+            resultado = fromDecimal(numero, 8);
+            break;
+        case "hexadecimal":
+            resultado = fromDecimal(numero, 16);
+            break;
+    };
+    output.textContent = resultado;
+};
+
+function convertHexadecimal() {
+    let numero = document.getElementById("getHex").value;
+    let output = document.getElementById("outputHex");
+    let selector = document.getElementById("hexTo");
+    let valorSelector = selector.value;
+    let resultado;
+
+    switch (valorSelector) {
+        case "binario":
+            resultado = hexToBin(numero);
+            break;
+        case "octal":
+            resultado = hexToOctal(numero);
+            break;
+        case "decimal":
+            resultado = toDecimal(numero, 16);
+            break;
+    };
+    output.textContent = resultado;
+};
+
+// Si falla no hay excepcion, hay que mostrar el error al usuario
