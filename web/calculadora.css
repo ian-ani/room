@@ -7,7 +7,7 @@
 body {
     /* margin: 0; */
 	color: #000;
-	font-family: sans-serif, "Lucida Console";
+	font-family: "Nunito", sans-serif, "Lucida Console";
     overflow-y: hidden;
     background-color: purple;
 }
@@ -23,7 +23,7 @@ body {
     min-height: 100vh;
     /* grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(120px, auto) repeat(5, 100px); */
-    border: solid;
+    /* border: solid; */
 }
 
 #calculator output {
@@ -39,13 +39,15 @@ body {
     /* border: solid; */
 }
 
-#outputAnterior {
+/* #outputAnterior {
     color: #1d1d1d;
     font-size: 18px;
-}
+} */
 
 #outputActual {
+    min-height: 75px;
     font-size: 24px;
+    border: 2px #fff solid;
 }
 
 table {
@@ -65,10 +67,19 @@ table td {
     height: 60px;
     border: solid;
     text-align: center;
+    font-weight: bold;
 }
 
 table td:hover {
-    background-color: #e4e4e4;
+    background-color: rgba(190, 190, 190, 0.6);
     cursor: pointer;
 }
 
+.not-numbers {
+    background-color: rgb(58, 166, 193);
+}
+
+.not-numbers:hover {
+    background-color: rgba(58, 166, 193, 0.6);
+    cursor: pointer;
+}

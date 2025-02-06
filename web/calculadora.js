@@ -1,46 +1,83 @@
 /* clase */
 
-class Calculadora {
-    constructor(previo, actual) {
-        this.previo = previo;
-        this.actual = actual;
+class Calculator {
+    constructor(previousNumber, currentNumber) {
+        this.previousNumber = previousNumber;
+        this.currentNumber = currentNumber;
         this.clear();
+    };
+
+    // los metodos de la clase no necesitan la palabra function
+
+    clear() {
+        this.previousNumber = "";
+        this.currentNumber = "";
+        this.operation = undefined;
+    };
+    
+    remove() {
+        this.currentNumber = String(this.currentNumber).slice(0, -1);
+    };
+    
+    appendNumber(number) {
+        const operators = ["+", "-", "*", "÷"];
+
+        if (operators.includes(this.currentNumber.slice(-1)) && operators.includes(number)) {
+            return;
+        };
+
+        if (number === "." && this.currentNumber.includes(".")) { // esto esta mal porque solo permite un numero con decimales
+            return;
+        };
+
+        this.previousNumber = this.currentNumber;
+        this.currentNumber = String(this.currentNumber) + String(number);
+    };
+    
+    run() {
+        if (this.currentNumber.includes("÷") && this.currentNumber.includes("0")) {
+            this.currentNumber = "División por cero.";
+            return;
+        };
+
+        this.currentNumber = eval(this.currentNumber);
+    };
+    
+    updateDisplay() {
+        currentNumber.textContent = this.currentNumber;
+        // previousNumber.textContent = this.previousNumber; // realmente el actual se diferencia tomando al operador como separador!!
     };
 };
 
-/* instanciar clase */
-
-const instancia = new Calculadora(previoDelSelector, actualDelSelector);
-
-/* funciones */
-
-function clear() {
-    
-};
-
-function remove() {
-
-};
-
-function appendNumber() {
-
-};
-
-function chooseOperation() {
-
-};
-
-function run() {
-
-};
-
-function updateDisplay() {
-
-};
-
-
+/* botones */
 
 const numberButtons = document.querySelectorAll("[data-number]");
-/* tambien para las operaciones, operandos, etc */
+const equalButton = document.querySelector("[data-equals]");
+const deleteButton = document.querySelector("[data-delete]");
+const clearButton = document.querySelector("[data-clear]");
+const previousNumber = document.querySelector("[data-previous-number]");
+const currentNumber = document.querySelector("[data-current-number]");
 
-/* recorrer numeros, recorrer operadores addEventListener dentro del forEach */
+const calculator = new Calculator(previousNumber, currentNumber);
+
+numberButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        calculator.appendNumber(button.innerText);
+        calculator.updateDisplay();
+    });
+});
+
+equalButton.addEventListener("click", () => {
+    calculator.run();
+    calculator.updateDisplay();
+});
+
+deleteButton.addEventListener("click", () => {
+    calculator.remove();
+    calculator.updateDisplay();
+});
+
+clearButton.addEventListener("click", () => {
+    calculator.clear();
+    calculator.updateDisplay();
+});

@@ -4,43 +4,45 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="calculadora.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito">
         <link rel="icon" type="image/x-icon" href="img/calculator-icon.png">
         <title>Calculadora</title>
     </head>
     <body>
         <div id="calculator">
-            <output name="outputAnterior" id="outputAnterior" previousOperand>2+2=</output>
-            <output name="outputActual" id="outputActual" currentOperand>4</output>
+            <!-- <output name="outputAnterior" id="outputAnterior" data-previous-number></output> -->
+            <output name="outputActual" id="outputActual" data-current-number></output>
             <table>
                 <tr>
-                    <td colspan="2" data-clear>C</td>
-                    <td data-delete>←</td>
-                    <td data-operator>÷</td>
+                    <td colspan="2" class="not-numbers" data-clear>C</td>
+                    <td class="not-numbers" data-delete>←</td>
+                    <td class="not-numbers" data-number>÷</td>
                 </tr>
                 <tr>
                     <td data-number>7</td>
                     <td data-number>8</td>
                     <td data-number>9</td>
-                    <td data-operator>*</td>
+                    <td class="not-numbers" data-number>*</td>
                 </tr>
                 <tr>
                     <td data-number>4</td>
                     <td data-number>5</td>
                     <td data-number>6</td>
-                    <td data-operator>-</td>
+                    <td class="not-numbers" data-number>-</td>
                 </tr>
                 <tr>
                     <td data-number>1</td>
                     <td data-number>2</td>
                     <td data-number>3</td>
-                    <td data-operator>+</td>
+                    <td class="not-numbers" data-number>+</td>
                 </tr>
                 <tr>
-                    <td data-number>.</td>
+                    <td class="not-numbers" data-number>.</td>
                     <td data-number>0</td>
-                    <td colspan="2" data-equals>=</td>
+                    <td class="not-numbers" colspan="2" data-equals>=</td>
                 </tr>
             </table>
         </div>
+        <script src="calculadora.js"></script>
     </body>
 </html>
