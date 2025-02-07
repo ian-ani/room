@@ -8,24 +8,18 @@ function fromDecimal(numero, base) {
     const TABLA = {0:"0", 1:"1", 2:"2", 3:"3", 4:"4", 5:"5", 6:"6", 7:"7", 8:"8", 9:"9", 
         10:"A", 11:"B", 12:"C", 13:"D", 14:"E", 15:"F"};
 
-    try {
-        if (isNaN(numero) || isNaN(base)) {
-            throw new TypeError("Debe ser un número."); // asi porque js y los tipos
-        };
-        while (numero >= 1) {
-            let resto = Math.floor(numero % divisor);
-            numero = numero / divisor; // cuidado que esto estaba con un let y eso es incorrecto
+    if (isNaN(numero) || isNaN(base)) {
+        throw new TypeError("Debe ser un número.");
+    };
 
-            resultado = TABLA[resto] + String(resultado);
-        };
-    } catch (err) {
-        console.log(err);
-        return null;
+    while (numero >= 1) {
+        let resto = Math.floor(numero % divisor);
+        numero = numero / divisor; // cuidado que esto estaba con un let y daba error
+
+        resultado = TABLA[resto] + String(resultado);
     };
     return resultado;
 };
-
-// fromDecimal(1300, 2);
 
 /* Binario, octal o hexadecimal a decimal */
 
@@ -38,22 +32,18 @@ function toDecimal(numero, base) {
     const numeroArray = String(numero).split(""); // esto forma parte del forEach de despues
 
     if (![2, 8, 16].includes(base)) {
-        console.log("La base indicada debe ser 2, 8 o 16.");
-        return null;
-    };
+        throw new Error("La base indicada debe ser 2, 8 o 16.");
+    }; // a lo mejor esto sobra porque no deja otra opcion de todas formas
 
     for (let digito of String(numero)) {
         if (base == 2 && !(["0", "1"].includes(digito))) { // en js se niega y se usa lista.includes(valor) en lugar de valor not in lista
-            console.log("El número indicado no es un binario.");
-            return null;
+            throw new Error("El número indicado no es un binario.");
         };
         if (base == 8 && !(["0", "1", "2", "3", "4", "5", "6", "7"].includes(digito))) {
-            console.log("El número indicado no es un octal.");
-            return null;
+            throw new Error("El número indicado no es un octal.");
         };
         if (base == 16 && !(digito.toUpperCase() in TABLA)) {
-            console.log("El número indicado no es un hexadecimal.");
-            return null;
+            throw new Error("El número indicado no es un hexadecimal.");
         };
     };
 
@@ -66,8 +56,6 @@ function toDecimal(numero, base) {
     return resultado;
 };
 
-// toDecimal(101, 2);
-
 /* Binario a octal */
 
 function binaryToOctal(numero) {
@@ -76,8 +64,7 @@ function binaryToOctal(numero) {
 
     for (let digito of String(numero)) {
         if (!["0", "1"].includes(digito)) {
-            console.log("El número indicado no es un binario.");
-            return null;
+            throw Error("El número indicado no es un binario.");
         };
     };
 
@@ -93,8 +80,6 @@ function binaryToOctal(numero) {
     return resultado;
 };
 
-// binaryToOctal(101110);
-
 /* Binario a hexadecimal */
 
 function binaryToHex(numero) {
@@ -104,8 +89,7 @@ function binaryToHex(numero) {
 
     for (let digito of String(numero)) {
         if (!["0", "1"].includes(digito)) {
-            console.log("El número indicado no es un binario.");
-            return null;
+            throw Error("El número indicado no es un binario.");
         };
     };
     
@@ -121,8 +105,6 @@ function binaryToHex(numero) {
     return resultado;
 };
 
-// binaryToHex(10011100);
-
 /* Octal a binario */
 
 function octalToBin(numero) {
@@ -131,8 +113,7 @@ function octalToBin(numero) {
 
     for (let digito of String(numero)) {
         if (!["0", "1", "2", "3", "4", "5", "6", "7"].includes(digito)) {
-            console.log("El número indicado no es un octal.");
-            return null;
+            throw Error("El número indicado no es un octal.");
         };
     };
 
@@ -142,14 +123,10 @@ function octalToBin(numero) {
     return resultado;
 };
 
-// octalToBin(35)
-
 /* Octal a hexadecimal */
 
 function octalToHex(numero) {
     var bin_numero = octalToBin(numero);
-
-    console.log(bin_numero);
 
     if (bin_numero == null) {
         return null;
@@ -163,8 +140,6 @@ function octalToHex(numero) {
     return hex_numero;
 };
 
-// octalToHex(15)
-
 /* Hexadecimal a binario */
 
 function hexToBin(numero) {
@@ -174,8 +149,7 @@ function hexToBin(numero) {
 
     for (let digito of String(numero)) {
         if (!(Object.keys(TABLA)).includes(digito)) {
-            console.log("El número indicado no es un hexadecimal.");
-            return null;
+            throw Error("El número indicado no es un hexadecimal.");
         };
     };
 
@@ -184,8 +158,6 @@ function hexToBin(numero) {
     };
     return resultado;
 };
-
-// hexToBin("1E");
 
 /* funcion autoejecutable */
 
@@ -208,8 +180,6 @@ function hexToOctal(numero) {
     return octal_numero;
 };
 
-// hexToOctal("C");
-
 /* LLAMAR FUNCIONES PARA EL HTML */
 
 function convertBinary() {
@@ -221,13 +191,25 @@ function convertBinary() {
 
     switch (valorSelector) {
         case "octal":
-            resultado = binaryToOctal(numero);
+            try {
+                resultado = binaryToOctal(numero);
+            } catch (error) {
+                resultado = error;
+            };
             break;
         case "decimal":
-            resultado = toDecimal(numero, 2);
+            try {
+                resultado = toDecimal(numero, 2);
+            } catch (error) {
+                resultado = error;
+            };
             break;
         case "hexadecimal":
-            resultado = binaryToHex(numero);
+            try {
+                resultado = binaryToHex(numero);
+            } catch (error) {
+                resultado = error;
+            };
             break;
     };
     output.textContent = resultado;
@@ -242,13 +224,25 @@ function convertOctal() {
 
     switch (valorSelector) {
         case "binario":
-            resultado = octalToBin(numero);
+            try {
+                resultado = octalToBin(numero);
+            } catch (error) {
+                resultado = error;
+            };
             break;
         case "decimal":
-            resultado = toDecimal(numero, 8);
+            try { 
+                resultado = toDecimal(numero, 8);
+            } catch (error) {
+                resultado = error;
+            };
             break;
         case "hexadecimal":
-            resultado = octalToHex(numero);
+            try {
+                resultado = octalToHex(numero);
+            } catch (error) {
+                resultado = error;
+            };
             break;
     };
     output.textContent = resultado;
@@ -263,13 +257,25 @@ function convertDecimal() {
 
     switch (valorSelector) {
         case "binario":
-            resultado = fromDecimal(numero, 2);
+            try {
+                resultado = fromDecimal(numero, 2);
+            } catch (error) {
+                resultado = error;
+            };
             break;
         case "octal":
-            resultado = fromDecimal(numero, 8);
+            try {
+                resultado = fromDecimal(numero, 8);
+            } catch (error) {
+                resultado = error;
+            };
             break;
         case "hexadecimal":
-            resultado = fromDecimal(numero, 16);
+            try {
+                resultado = fromDecimal(numero, 16);
+            } catch (error) {
+                resultado = error;
+            };
             break;
     };
     output.textContent = resultado;
@@ -284,16 +290,26 @@ function convertHexadecimal() {
 
     switch (valorSelector) {
         case "binario":
-            resultado = hexToBin(numero);
+            try {
+                resultado = hexToBin(numero);
+            } catch (error) {
+                resultado = error;
+            };
             break;
         case "octal":
-            resultado = hexToOctal(numero);
+            try {
+                resultado = hexToOctal(numero);
+            } catch (error) {
+                resultado = error;
+            };
             break;
         case "decimal":
-            resultado = toDecimal(numero, 16);
+            try {
+                resultado = toDecimal(numero, 16);
+            } catch (error) {
+                resultado = error;
+            };
             break;
     };
     output.textContent = resultado;
 };
-
-// Si falla no hay excepcion, hay que mostrar el error al usuario

@@ -26,9 +26,9 @@ class Calculator {
             return;
         };
 
-        if (number === "." && this.currentNumber.includes(".")) { // esto esta mal porque solo permite un numero con decimales
+        if (number.includes(".") && this.currentNumber.slice(-1).includes(".")) {
             return;
-        };
+        }; 
 
         this.previousNumber = this.currentNumber;
         this.currentNumber = String(this.currentNumber) + String(number);
