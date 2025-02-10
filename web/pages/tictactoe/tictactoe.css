@@ -118,6 +118,11 @@ form input {
     box-shadow: 0 6px 6px 0 black;
 }
 
+.cell:hover {
+    cursor: pointer;
+    background-image: linear-gradient(to bottom right, #ebd7ba, #c2a57a);
+}
+
 .clean {
     display: block;
     margin: 5% auto 0 auto;
