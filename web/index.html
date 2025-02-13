@@ -4,16 +4,51 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="pages/calculator/calculator.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anta">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito">
         <link rel="icon" type="image/x-icon" href="img/computer.gif">
         <title>Habitación - Menú principal</title>
     </head>
     <body>
         <div id="room">
             <div id="calculator">
-                <img src="img/calculator.png" alt="Botón calculadora" title="Calculadora">
-                <div id="calculator" hidden>
-                    
+                <img src="img/calculator.png" alt="Botón calculadora" title="Calculadora" onclick="showCalculator()">
+                <div id="calculator-popup" hidden>
+                    <div id="close-calculator">
+                        <div id="close-button" onclick="hideCalculator()">X</div>
+                    </div>
+                    <output name="output" id="output" data-current-number></output>
+                    <table>
+                        <tr>
+                            <td colspan="2" class="not-numbers" data-clear>C</td>
+                            <td class="not-numbers" data-delete>←</td>
+                            <td class="not-numbers" data-number>/</td>
+                        </tr>
+                        <tr>
+                            <td data-number>7</td>
+                            <td data-number>8</td>
+                            <td data-number>9</td>
+                            <td class="not-numbers" data-number>*</td>
+                        </tr>
+                        <tr>
+                            <td data-number>4</td>
+                            <td data-number>5</td>
+                            <td data-number>6</td>
+                            <td class="not-numbers" data-number>-</td>
+                        </tr>
+                        <tr>
+                            <td data-number>1</td>
+                            <td data-number>2</td>
+                            <td data-number>3</td>
+                            <td class="not-numbers" data-number>+</td>
+                        </tr>
+                        <tr>
+                            <td class="not-numbers" data-number>.</td>
+                            <td data-number>0</td>
+                            <td class="not-numbers" colspan="2" data-equals>=</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
 
@@ -21,8 +56,8 @@
                 <a href="pages/tictactoe/tictactoe.html"><img src="img/board.png" alt="Botón tres en raya" title="Tres en raya"></a>
             </div>
 
-            <div id="conversor">
-                <a href="pages/conversor/conversor.html"><img src="img/computer.png" alt="Botón conversor binario, octal, decimal, hexadecimal" title="Conversor"></a>
+            <div id="converter">
+                <a href="pages/converter/converter.html"><img src="img/computer.png" alt="Botón conversor binario, octal, decimal, hexadecimal" title="Conversor"></a>
             </div>
 
             <div id="cats">
@@ -33,22 +68,22 @@
                 <a href="https://github.com/ian-ani/"><img src="img/book.png" alt="Botón que dirige a mi GitHub" title="Github"></a>
             </div>
 
-            <div id="pecera">
-                <a href="pages/pecera/pecera.html"><img src="img/aquarium.png" alt="Botón que dirige a una pecera animada" title="Pecera"></a>
+            <div id="fishtank">
+                <a href="pages/fish/fishtank.html"><img src="img/aquarium.png" alt="Botón que dirige a una pecera animada" title="Pecera"></a>
             </div>
 
             <nav>
                 <ul>
                     <li><a href="index.html"><img src="img/menu.png" alt="Botón navegación menú principal"></a></li>
-                    <li><a href="">Calculadora</a></li>
+                    <li><span onclick="showCalculator()">Calculadora</span></li>
                     <li><a href="pages/tictactoe/tictactoe.html">Tres en raya</a></li>
-                    <li><a href="pages/conversor/conversor.html">Conversor</a></li>
+                    <li><a href="pages/converter/converter.html">Conversor</a></li>
                     <li><a href="pages/cat_api/cats.html">Gatos</a></li>
-                    <li><a href="pages/pecera/pecera.html">Pecera</a></li>
+                    <li><a href="pages/fish/fishtank.html">Pecera</a></li>
                     <li><a href="https://github.com/ian-ani/">Github</a></li>
                 </ul>
             </nav>
-            <!-- <a href="pages/help/help.html"><img src="img/help.png" id="help_icon" title="Botón ayuda" alt="Botón ayuda"></a> -->
         </div>
+        <script src="pages/calculator/calculator.js"></script>
     </body>
 </html>

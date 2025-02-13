@@ -1,4 +1,4 @@
-/* clase */
+/* LOGICA CALCULADORA */
 
 class Calculator {
     constructor(previousNumber, currentNumber) {
@@ -6,8 +6,6 @@ class Calculator {
         this.currentNumber = currentNumber;
         this.clear();
     };
-
-    // los metodos de la clase no necesitan la palabra function
 
     clear() {
         this.previousNumber = "";
@@ -35,7 +33,7 @@ class Calculator {
     };
     
     run() {
-        if (this.currentNumber.includes("÷") && this.currentNumber.includes("0")) {
+        if (this.currentNumber.includes("/") && this.currentNumber.includes("0")) {
             this.currentNumber = "División por cero.";
             return;
         };
@@ -45,11 +43,10 @@ class Calculator {
     
     updateDisplay() {
         currentNumber.textContent = this.currentNumber;
-        // previousNumber.textContent = this.previousNumber; // realmente el actual se diferencia tomando al operador como separador!!
     };
 };
 
-/* botones */
+/* BOTONES DE LA CALCULADORA */
 
 const numberButtons = document.querySelectorAll("[data-number]");
 const equalButton = document.querySelector("[data-equals]");
@@ -81,3 +78,23 @@ clearButton.addEventListener("click", () => {
     calculator.clear();
     calculator.updateDisplay();
 });
+
+/* ABRIR Y CERRAR CALCULADORA */
+
+function showCalculator() {
+    let element = document.getElementById("calculator-popup");
+    
+    if (element) {
+        element.removeAttribute("hidden");
+        element.style.display = "flex";
+    };
+};
+
+function hideCalculator() {
+    let element = document.getElementById("calculator-popup");
+    
+    if (element) {
+        element.setAttribute("hidden", true);
+        element.style.display = "none";
+    };
+};

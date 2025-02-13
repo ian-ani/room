@@ -16,7 +16,7 @@ body {
     font-family: "Lucida Console", sans-serif;
 }
 
-#pecera {
+#fishtank {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,6 @@ body {
     position: relative;
     width: clamp(50%, 75%, 100%);
     height: 20%;
-    /* background-color: red; */
 }
 
 #goldfish img {
@@ -52,7 +51,6 @@ body {
     position: relative;
     width: clamp(25%, 50%, 75%);
     height: 20%;
-    /* background-color: blue; */
 }
 
 #tetra img {
@@ -73,7 +71,6 @@ body {
 #guppy {    
     margin: 10% auto 0% auto;
     position: relative;
-    /* background-color: green; */
     width: clamp(50%, 75%, 100%);
     height: 20%;
 }
@@ -94,7 +91,6 @@ body {
 }
 
 #angelfish {
-    /* background: yellow; */
     margin: 5% auto 0% 5%;
     position: relative;
     width: clamp(50%, 75%, 100%);
@@ -117,7 +113,6 @@ body {
 }
 
 #betta {
-    /* background: purple; */
     margin: 2% auto 0% auto;
     position: relative;
     width: clamp(50%, 75%, 100%);

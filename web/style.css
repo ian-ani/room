@@ -31,7 +31,7 @@ body {
     background-size: cover;
 }
 
-#conversor img {
+#converter img {
     display: flex;
     z-index: 1;
     position: absolute;
@@ -41,7 +41,7 @@ body {
     max-height: 22%;
 }
 
-#conversor img:hover {
+#converter img:hover {
     border: 1px black solid;
     box-shadow: 0 6px 20px 0 black;
 }
@@ -107,7 +107,7 @@ body {
     box-shadow: 0 6px 20px 0 black;
 }
 
-#pecera img {
+#fishtank img {
     display: flex;
     z-index: 0;
     position: absolute;
@@ -117,7 +117,7 @@ body {
     max-height: clamp(20%, 40%, 50%);
 }
 
-#pecera img:hover {
+#fishtank img:hover {
     border: 1px black solid;
     box-shadow: 0 6px 20px 0 black;
 }
@@ -148,7 +148,7 @@ nav ul li:hover {
     box-shadow: 0 6px 20px 0 black;
 }
 
-nav ul li a {
+nav ul li a, span {
     text-decoration: none;
     color: #ffffff;
 }

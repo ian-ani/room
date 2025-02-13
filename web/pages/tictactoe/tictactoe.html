@@ -38,20 +38,14 @@
                     <td class="cell" data-cells data-row="2" data-col="2"></td>
                 </tr>
             </table>
-            <a href="https://es.wikipedia.org/wiki/Tres_en_línea" target="_blank"><img src="../../img/help.png" id="help_icon" title="Botón ayuda" onclick="anotherCat()"></a>
+            <a href="https://es.wikipedia.org/wiki/Tres_en_línea" target="_blank"><img src="../../img/help.png" id="help-icon" title="Botón ayuda" onclick="anotherCat()"></a>
             
-            <label for="message">CAMBIAR CSS DE OUTPUT</label>
-            <output name="output" for="message"></output>
+            <label for="message"></label>
+            <output id="output" name="output" for="message"></output>
         </div>
-        <button class="clean" onclick="cleanBoard()" title="Botón limpiar tablero">Limpiar tablero</button>
+        <button id="clean-button" title="Botón limpiar tablero">Limpiar tablero</button>
         <script src="./js/player.js"></script>
         <script src="./js/game.js"></script>
         <script src="./js/game_flow.js"></script>
     </body>
 </html>
-
-<!-- falta poner quien gana como output, y cualquier mensaje de error tambien como output -->
-
-<!-- limpiar tablero -->
-<!-- se podria limpiar poniendo el tablero otra vez a cero (volviendo a llamar a la clase?) o 
- reiniciando la pagina directamente -->

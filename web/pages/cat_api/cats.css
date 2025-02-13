@@ -55,25 +55,24 @@ body {
     background-color: black;
 }
 
-#catImage {
+#cat-image {
     width: 100%;
     height: 100%;
     object-fit: fill;
-    /* object-fit: cover; */
     margin-left: auto;
     margin-right: auto;
     display: block;
 }
 
-#breedLink {
+#breed-link {
     color: cyan;
 }
 
-#breedLink:visited {
+#breed-link:visited {
     color:yellow;
 }
 
-#paw_icon {
+#paw-icon {
     z-index: 1;
     position: absolute;
     margin: 2% 2% 6% 2%;
@@ -84,7 +83,7 @@ body {
     cursor: pointer;
 }
 
-#paw_icon:hover {
+#paw-icon:hover {
     animation: shake 0.5s;
     animation-iteration-count: infinite; 
 }
@@ -103,7 +102,7 @@ body {
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-#help_icon {
+#help-icon {
     position: fixed;
     margin: 2% 3% 2% 2%;
     right: 0;

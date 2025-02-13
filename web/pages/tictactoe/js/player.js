@@ -4,7 +4,7 @@ class Player {
         this.player2 = null;
     };
 
-    choose_player() {
+    choosePlayer() {
         let player1 = document.getElementById("player1");
         let player2 = document.getElementById("player2");
 

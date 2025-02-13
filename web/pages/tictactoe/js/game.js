@@ -1,107 +1,123 @@
 class Game {
     constructor(player1, player2) {
         this.players = [player1, player2];
-        this.current_player = null;
+        this.currentPlayer = null;
         this.turn = 0;
+        this.victory = false;
     };
 
-    read_board() {
+    readBoard() {
         var board = document.getElementById("board");
 
         for (let row = 0; row < board.rows.length; row++) {
             for (let col = 0; col < board.rows[row].cells.length; col++) {
-                let cell = board.rows[row].cells[col];
-                console.log(`Txt: ${cell.innerText} \tFila: ${row} \t Celda: ${col}`);
+                board.rows[row].cells[col];
             };
         };
     };
 
-    first_turn() {
-        let random_number = Math.floor(Math.random() * 10); // de 0 a 9
+    firstTurn() {
+        let output = document.getElementById("output");
+        let randomNumber = Math.floor(Math.random() * 10); // de 0 a 9
     
-        if (random_number % 2 == 0) {
-            this.current_player = this.players[0]; // X
-            console.log(`El jugador ${this.players[0]} tiene el primer turno.`);
+        if (randomNumber % 2 == 0) {
+            this.currentPlayer = this.players[0]; // X
+            output.textContent = `El jugador ${this.players[0]} tiene el primer turno.`;
         } else {
-            this.current_player = this.players[1]; // 0
-            console.log(`El jugador ${this.players[1]} tiene el primer turno.`);
+            this.currentPlayer = this.players[1]; // 0
+            output.textContent = `El jugador ${this.players[1]} tiene el primer turno.`;
         };
     };
 
-    illegal_movements(row, col) {
+    illegalMovements(row, col) {
         const board = document.getElementById("board");
+        let output = document.getElementById("output");
         let cell = board.rows[row].cells[col];
 
         if (["X", "O"].includes(cell.innerText)) {
-            console.log("Movimiento no permitido: celda ocupada.");
+            output.textContent = "Movimiento no permitido: celda ocupada.";
             return false;
         };
         return true;
     };
 
-    place_token() {
+    placeToken() {
         const cells = document.querySelectorAll("[data-cells]");
+        let output = document.getElementById("output");
 
         cells.forEach(cell => {
             cell.addEventListener("click", () => {
+                if (this.victory) return;
+
                 const datarow = parseInt(cell.getAttribute("data-row"));
                 const datacol = parseInt(cell.getAttribute("data-col"));
 
-                if (this.illegal_movements(datarow, datacol)) {
-                    cell.innerText = this.current_player;
-                    if (this.check_victory()) {
-                        console.log(`Victoria de ${this.current_player}`);
-                        this.read_board();
+                if (this.illegalMovements(datarow, datacol)) {
+
+                    if (this.currentPlayer === this.players[0]) { // X
+                        cell.innerText = this.currentPlayer;
+                        cell.style.color = "red";
+                    } else {
+                        cell.innerText = this.currentPlayer;
+                        cell.style.color = "blue";
+                    };
+
+                    if (this.checkVictory()) {
+                        output.textContent = `🎉 Victoria de ${this.currentPlayer} 🎉`;
+                        this.readBoard();
+                        this.victory = true;
                         return;
                     };
-                    this.switch_turn();
+                    this.switchTurn();
                 };
             });
         });
     };
 
-    check_victory() {
+    checkVictory() {
         const board = document.getElementById("board");
 
         for (let row = 0; row < 3; row++) {
-            if (board.rows[row].cells[0].innerText == this.current_player && 
-                board.rows[row].cells[1].innerText == this.current_player && 
-                board.rows[row].cells[2].innerText == this.current_player) {
+            if (board.rows[row].cells[0].innerText == this.currentPlayer && 
+                board.rows[row].cells[1].innerText == this.currentPlayer && 
+                board.rows[row].cells[2].innerText == this.currentPlayer) {
                 return true;
             };
         };
 
         for (let col = 0; col < 3; col++) {
-            if (board.rows[0].cells[col].innerText == this.current_player && 
-                board.rows[1].cells[col].innerText == this.current_player && 
-                board.rows[2].cells[col].innerText == this.current_player) {
+            if (board.rows[0].cells[col].innerText == this.currentPlayer && 
+                board.rows[1].cells[col].innerText == this.currentPlayer && 
+                board.rows[2].cells[col].innerText == this.currentPlayer) {
                 return true;
             };
         };
 
-        if (board.rows[0].cells[0].innerText == this.current_player && 
-            board.rows[1].cells[1].innerText == this.current_player && 
-            board.rows[2].cells[2].innerText == this.current_player) {
+        if (board.rows[0].cells[0].innerText == this.currentPlayer && 
+            board.rows[1].cells[1].innerText == this.currentPlayer && 
+            board.rows[2].cells[2].innerText == this.currentPlayer) {
             return true;
-        } else if (board.rows[0].cells[2].innerText == this.current_player && 
-            board.rows[1].cells[1].innerText == this.current_player && 
-            board.rows[2].cells[0].innerText == this.current_player) {
+        } else if (board.rows[0].cells[2].innerText == this.currentPlayer && 
+            board.rows[1].cells[1].innerText == this.currentPlayer && 
+            board.rows[2].cells[0].innerText == this.currentPlayer) {
             return true;
         };
         return false;
     };
 
-    switch_turn() {
-        if (this.current_player == this.players[0]) {
-            this.current_player = this.players[1]; // O
+    switchTurn() {
+        let output = document.getElementById("output");
+
+        if (this.currentPlayer == this.players[0]) {
+            this.currentPlayer = this.players[1]; // O
         } else {
-            this.current_player = this.players[0]; // X
+            this.currentPlayer = this.players[0]; // X
         };
 
-        console.log(`Es el turno de ${this.current_player}.`);
+        output.textContent = `Es el turno de ${this.currentPlayer}.`;
 
-        if (this.turn >= 9) {
-            console.log("Tablero lleno. Empate.");
+        if (++this.turn >= 9) {
+            output.textContent = "Tablero lleno. Empate.";
         };
     }; 
 };

@@ -1,10 +1,10 @@
 function hideDefault(element) {
-    const divID = ["binario", "octal", "decimal", "hexadecimal"];
+    const divID = ["binary", "octal", "decimal", "hexadecimal"];
 
-    let p = document.getElementById("defecto");
-        if (p) {
-            p.setAttribute("hidden", true);
-        };
+    let p = document.getElementById("default");
+    if (p) {
+        p.setAttribute("hidden", true);
+    };
     
     divID.forEach(function(elementId) {
         let element = document.getElementById(elementId);
@@ -15,8 +15,8 @@ function hideDefault(element) {
 };
 
 function showBinary() {
-    hideDefault("binario");
-    let p = document.getElementById("binario");
+    hideDefault("binary");
+    let p = document.getElementById("binary");
     if (p) {
         p.removeAttribute("hidden");
     };

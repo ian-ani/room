@@ -1,0 +1,86 @@
+#calculator {
+    font-family: "Nunito", sans-serif, "Lucida Console";
+    display: flex;
+    justify-content: center;
+}
+
+#close-calculator {
+    display: flex;
+    justify-content: right;
+    background-color: #fff;
+    height: 20px;
+    width: 250px;
+}
+
+#close-button {
+    background-color: red;
+    width: 25%;
+    border-left: 2px solid black;
+    text-align: center;
+}
+
+#close-button:hover {
+    cursor: pointer;
+}
+
+#calculator-popup {
+    position: absolute;
+    margin-top: 7%;
+    z-index: 2;
+    display: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    border: 2px black solid;
+    box-shadow: 0 10px 20px 0 black;
+}
+
+#calculator-popup output {
+    background-color: rgb(75, 75, 75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
+    padding: 10px;
+    width: 250px; /* no cambiar el 250px */
+}
+
+#output {
+    min-height: 75px;
+    font-size: 24px;
+    color: white;
+    border-top: 4px #000 solid;
+    border-bottom: 4px #000 solid;
+}
+
+table {
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+table td {
+    background-color: #bebebe;
+    width: 60px;
+    height: 60px;
+    border: solid;
+    text-align: center;
+    font-weight: bold;
+}
+
+table td:hover {
+    background-color: rgba(190, 190, 190, 0.6);
+    cursor: pointer;
+}
+
+.not-numbers {
+    background-color: rgb(58, 166, 193);
+}
+
+.not-numbers:hover {
+    background-color: rgba(58, 166, 193, 0.6);
+    cursor: pointer;
+}

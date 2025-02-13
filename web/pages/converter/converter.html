@@ -3,19 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="conversor.css">
+        <link rel="stylesheet" href="converter.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anta">
         <link rel="icon" type="image/x-icon" href="../../img/binary.png">
         <title>Conversor - sistema de numeración</title>
 
-        <script src="conversor.js"></script>
+        <script src="converter.js"></script>
         <script src="showDivs.js"></script>
     </head>
     <body>
         <header>
             <h1>Conversor de sistemas de numeración</h1>
         </header>
-        <div class="pantalla">
+        <div class="screen">
             <aside>
                 <ul>
                     <li><a href="../../index.html">Volver atrás</a></li>
@@ -26,10 +26,10 @@
                     <li onclick="showHexadecimal()">Hexadecimal</li>
                 </ul>
             </aside>
-            <div id="escritorio">
+            <div id="desktop">
                 <img src="../../img/w95.jpg">
-                <div id="formulario">
-                    <div id="defecto">
+                <div id="form">
+                    <div id="default">
                         <p>Se puede convertir desde <b>binario, octal, decimal o hexadecimal</b> a cualquiera de las otras bases numéricas.<br>
                         Si quieres ver cómo funciona cada conversión puedes leer al respecto en mi <a href="https://github.com/ian-ani/conversor_num/">cuaderno de Jupyter (Python)</a> 
                         o en el propio código de esta web (JS) con <b>CTRL+U</b>.</p>
@@ -45,75 +45,76 @@
                         </ul>
                     </div>
 
-                    <div id="binario" hidden>
-                        <h2 class="convert_title">Binario</h2>
+                    <div id="binary" hidden>
+                        <h2 class="convert-title">Binario</h2>
                         <form action="">
-                            <label for="getBinario">Convertir desde binario</label>
-                            <input type="text" id="getBinario">
+                            <label for="getBinary">Convertir desde binario</label>
+                            <input type="text" id="getBinary">
                             <label for="binaryTo">Conversión a:</label>
                             <select name="Conversión" id="binaryTo">
                                 <option value="octal">Octal</option>
                                 <option value="decimal">Decimal</option>
                                 <option value="hexadecimal">Hexadecimal</option>
                             </select>
-                            <label for="resultado">Resultado:</label>
-                            <output name="output" for="resultado" id="outputBinario"></output>
-                            <input class="button_ok" type="button" value="OK" onclick="convertBinary()">
+                            <label for="result">Resultado:</label>
+                            <output name="output" for="result" id="outputBinary"></output>
+                            <input class="button-ok" type="button" value="OK" onclick="convertBinary()">
                         </form>
                     </div>
 
                     <div id="octal" hidden>
-                        <h2 class="convert_title">Octal</h2>
+                        <h2 class="convert-title">Octal</h2>
                         <form action="">
                             <label for="getOctal">Convertir desde octal</label>
                             <input type="text" id="getOctal">
                             <label for="octalTo">Conversión a:</label>
                             <select name="Conversión" id="octalTo">
-                                <option value="binario">Binario</option>
+                                <option value="binary">Binario</option>
                                 <option value="decimal">Decimal</option>
                                 <option value="hexadecimal">Hexadecimal</option>
                             </select>
-                            <label for="resultado">Resultado:</label>
-                            <output name="output" for="resultado" id="outputOctal"></output>
-                            <input class="button_ok" type="button" value="OK" onclick="convertOctal()">
+                            <label for="result">Resultado:</label>
+                            <output name="output" for="result" id="outputOctal"></output>
+                            <input class="button-ok" type="button" value="OK" onclick="convertOctal()">
                         </form>
                     </div>
 
                     <div id="decimal" hidden>
-                        <h2 class="convert_title">Decimal</h2>
+                        <h2 class="convert-title">Decimal</h2>
                         <form action="">
                             <label for="getDecimal">Convertir desde decimal</label>
                             <input type="text" id="getDecimal">
                             <label for="decimalTo">Conversión a:</label>
                             <select name="Conversión" id="decimalTo">
-                                <option value="binario">Binario</option>
+                                <option value="binary">Binario</option>
                                 <option value="octal">Octal</option>
                                 <option value="hexadecimal">Hexadecimal</option>
                             </select>
-                            <label for="resultado">Resultado:</label>
-                            <output name="output" for="resultado" id="outputDecimal"></output>
-                            <input class="button_ok" type="button" value="OK" onclick="convertDecimal()">
+                            <label for="result">Resultado:</label>
+                            <output name="output" for="result" id="outputDecimal"></output>
+                            <input class="button-ok" type="button" value="OK" onclick="convertDecimal()">
                         </form>
                     </div>
 
                     <div id="hexadecimal" hidden>
-                        <h2 class="convert_title">Hexadecimal</h2>
+                        <h2 class="convert-title">Hexadecimal</h2>
                         <form action="">
                             <label for="getHex">Convertir desde hexadecimal</label>
                             <input type="text" id="getHex">
                             <label for="hexTo">Conversión a:</label>
                             <select name="Conversión" id="hexTo">
-                                <option value="binario">Binario</option>
+                                <option value="binary">Binario</option>
                                 <option value="octal">Octal</option>
                                 <option value="decimal">Decimal</option>
                             </select>
-                            <label for="resultado">Resultado:</label>
-                            <output name="output" for="resultado" id="outputHex"></output>
-                            <input class="button_ok" type="button" value="OK" onclick="convertHexadecimal()">
+                            <label for="result">Resultado:</label>
+                            <output name="output" for="result" id="outputHex"></output>
+                            <input class="button-ok" type="button" value="OK" onclick="convertHexadecimal()">
                         </form>
                     </div>
                 </div>
             </div>
-        </div>      
+        </div>
+        <a href="https://es.wikipedia.org/wiki/Notaci%C3%B3n_posicional" target="_blank"><img src="../../img/help.png" id="help-icon" title="Botón ayuda"></a>      
     </body>
 </html>
