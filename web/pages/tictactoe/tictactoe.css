@@ -1,3 +1,5 @@
+/* POR DEFECTO: 1920x1080 */
+
 * {
     margin: 0;
     padding: 0;
@@ -21,7 +23,6 @@ body {
 
 .content {
     display: block;
-    position: relative;
     margin: 2% 2% 0 2%;
     border-style: groove;
     border-width: 10px;
@@ -97,7 +98,6 @@ form input {
     font-size: 70px;
     color: rgb(40, 43, 48);
     background-image: linear-gradient(to bottom right, #ceab78, #81653a);
-    padding: 0;
     margin: 2%;
     text-shadow: 2px 2px;
     box-shadow: 0 6px 6px 0 black;
@@ -144,4 +144,38 @@ form input {
     bottom: 0;
     max-width: 5%;
     max-height: 5%;
+}
+
+/* PANTALLAS */
+
+/* 1280x720, 1360x768 y 1366x768 */
+/* 1360x768 probado en una pantalla real */
+@media screen and (min-width: 1280px) and (max-width: 1400px) {
+    .cell {
+        height: 80px;
+        width: 80px;
+        font-size: 60px;
+    }
+}
+
+/* 2560x1440 */
+@media only screen and (min-width: 2241px) and (max-width: 2560px) {
+    #playerX {
+        font-size: 200%;
+    }
+    #playerO {
+        font-size: 200%;
+    }
+    .cell {
+        height: 150px;
+        width: 150px;
+        font-size: 100px;
+    }
+    #output {
+        font-size: 300%;
+        margin-bottom: 2%;
+    }
+    button {
+        font-size: 150%;
+    }
 }

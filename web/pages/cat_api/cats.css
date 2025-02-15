@@ -110,3 +110,12 @@ body {
     max-width: 5%;
     max-height: 5%;
 }
+
+/* PANTALLAS */
+
+/* 2560x1440 */
+@media only screen and (min-width: 2241px) and (max-width: 2560px) {
+    .content {
+        font-size: 150%;
+    }
+}

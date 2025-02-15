@@ -1,3 +1,5 @@
+/* POR DEFECTO: 1920x1080 */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,9 +8,8 @@
 
 body {
     margin: 0 auto;
-	max-width: 80%;
+	width: 80%;
 	height: 100vh;
-	position: relative;
 	color: #000;
 	font-family: sans-serif, "Lucida Console";
     overflow-y: hidden;
@@ -27,7 +28,8 @@ header h1 {
 }
 
 .screen {
-    display: block;
+    display: flex;
+    flex-direction: column;
 	height: 80vh;
 	position: relative;
 	margin: 2% 2% 0 2%;
@@ -117,13 +119,14 @@ header h1 {
 }
 
 #form div {
-    position: relative;
     margin: 5% auto 0 auto;
     width: 90%;
 }
 
 #form div form {
-    padding: 2% auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
 }
 
 #form div form label, input, select {
@@ -140,13 +143,11 @@ header h1 {
     display: block;
     background-color: #fff;
     padding: 1%;
-    width: 100%;
     height: 30px;
     border: 1px black solid;
 }
 
 .button-ok {
-    position: relative;
     margin-top: 10%;
 }
 
@@ -157,4 +158,34 @@ header h1 {
     bottom: 0;
     max-width: 5%;
     max-height: 5%;
+}
+
+/* PANTALLAS */
+
+/* 1280x720, 1360x768 y 1366x768 */
+/* 1360x768 probado en una pantalla real */
+@media screen and (min-width: 1280px) and (max-width: 1400px) {
+    .screen aside ul li {
+        font-size: 90%;
+    }
+    #form div {
+        margin: 1% auto 0 auto;
+    }
+    .button-ok {
+        margin-top: 3%
+    }
+}
+
+/* 2560x1440 */
+@media only screen and (min-width: 2241px) and (max-width: 2560px) {
+    body {
+        font-size: 150%;
+    }
+    input, select {
+        font-size: 125%;
+    }
+    #form div form output {
+        font-size: 125%;
+        height: 50px;
+    }
 }

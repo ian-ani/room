@@ -1,3 +1,5 @@
+/* POR DEFECTO: 1920x1080 */
+
 * {
     margin: 0;
     padding: 0;
@@ -129,7 +131,6 @@ nav {
     padding: 0.75%;
     position: absolute;
     background-image: linear-gradient(#808080, #575757);
-    /*background-color: grey;*/
     width: 100%;
     border-style: ridge;
 }
@@ -158,11 +159,130 @@ nav ul li a img {
     max-height: 3%;
 }
 
-/* #help_icon {
-    position: fixed;
-    margin: 2% 3% 2% 2%;
-    right: 0;
-    bottom: 0;
-    max-width: 5%;
-    max-height: 5%;
-} */
+/* PANTALLAS */
+
+/* Móviles y tablets en landscape */
+@media screen and (min-width: 667px) and (max-width: 1279px) and (orientation: landscape) {
+    #converter img {
+        margin: 14% 22% 0 0;
+    }
+    #tictactoe img {
+        margin: 29% 0 0 6%;
+    }
+    #calculator img {
+        margin: 27% 16% 0 0;
+    }
+    #github img {
+        margin: 11% 0 0 4%;
+    }
+    #fishtank img {
+        margin: 27% 6% 0 0;
+        max-width: clamp(20%, 30%, 40%);
+        max-height: clamp(20%, 30%, 40%);
+    }
+    nav ul li a, span {
+        font-size: 75%;
+    }
+}
+
+/* 1280x720, 1360x768 y 1366x768 */
+/* 1360x768 probado en una pantalla real */
+@media screen and (min-width: 1280px) and (max-width: 1400px) {
+    #converter img {
+        margin: 15% 22% 0 0;
+    }
+    #tictactoe img {
+        margin: 30% 0 0 6%;
+    }
+    #calculator img {
+        margin: 28% 16% 0 0;
+    }
+    #github img {
+        margin: 12% 0 0 4%;
+    }
+    #fishtank img {
+        margin: 28% 4% 0 0;
+        max-width: clamp(20%, 30%, 40%);
+        max-height: clamp(20%, 30%, 40%);
+    }
+}
+
+/* 1440x900 */
+@media screen and (min-width: 1400px) and (max-width: 1440px) {
+    #converter img {
+        margin: 16% 22% 0 0;
+    }
+    #tictactoe img {
+        margin: 32% 0 0 6%;
+    }
+    #calculator img {
+        margin: 30% 16% 0 0;
+    }
+    #fishtank img {
+        margin: 30% 4% 0 0;
+        max-width: clamp(20%, 30%, 40%);
+        max-height: clamp(20%, 30%, 40%);
+    }
+}
+
+/* 1536x864 y 1600x900 */
+@media screen and (min-width: 1441px) and (max-width: 1600px) {
+    #converter img {
+        margin: 18% 21% 0 0;
+    }
+    #tictactoe img {
+        margin: 34% 0 0 6%;
+    }
+    #calculator img {
+        margin: 32% 16% 0 0;
+    }
+    #github img {
+        margin: 17% 0 0 4%;
+    }
+    #fishtank img {
+        margin: 30% 4% 0 0;
+        max-width: clamp(20%, 30%, 40%);
+        max-height: clamp(20%, 30%, 40%);
+    }
+}
+
+/* 2240x1080 */
+@media screen and (min-width: 1921px) and (max-width: 2240px) {
+    #converter img {
+        margin: 15% 22% 0 0;
+    }
+    #tictactoe img {
+        margin: 31% 0 0 6%;
+    }
+    #calculator img {
+        margin: 29% 16% 0 0;
+    }
+    #fishtank img {
+        margin: 29% 4% 0 0;
+        max-width: clamp(40%, 50%, 60%);
+        max-height: clamp(40%, 50%, 60%);
+    }
+}
+
+/* 2560x1440 */
+@media screen and (min-width: 2241px) and (max-width: 2560px) {
+    #converter img {
+        margin: 19% 21% 0 0;
+    }
+    #tictactoe img {
+        margin: 35% 0 0 6%;
+    }
+    #calculator img {
+        margin: 33% 16% 0 0;
+    }
+    #github img {
+        margin: 17% 0 0 4%;
+    }
+    #fishtank img {
+        margin: 32% 4% 0 0;
+        width: 10%;
+    }
+    nav ul li a, span {
+        font-size: 150%;
+    }
+}
