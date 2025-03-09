@@ -160,22 +160,11 @@ form input {
 
 /* 2560x1440 */
 @media only screen and (min-width: 2241px) and (max-width: 2560px) {
-    #playerX {
-        font-size: 200%;
-    }
-    #playerO {
-        font-size: 200%;
-    }
     .cell {
         height: 150px;
         width: 150px;
-        font-size: 100px;
     }
     #output {
-        font-size: 300%;
         margin-bottom: 2%;
-    }
-    button {
-        font-size: 150%;
     }
 }

@@ -267,24 +267,22 @@ nav ul li a img {
 }
 
 /* 2560x1440 */
+/* probado con una pantalla real */
 @media screen and (min-width: 2241px) and (max-width: 2560px) {
     #converter img {
-        margin: 19% 21% 0 0;
+        margin: 17% 21% 0 0;
     }
     #tictactoe img {
-        margin: 35% 0 0 6%;
+        margin: 31% 0 0 6%;
     }
     #calculator img {
-        margin: 33% 16% 0 0;
+        margin: 29% 16% 0 0;
     }
     #github img {
-        margin: 17% 0 0 4%;
+        margin: 13% 0 0 4%;
     }
     #fishtank img {
-        margin: 32% 4% 0 0;
+        margin: 26% 4% 0 0;
         width: 10%;
-    }
-    nav ul li a, span {
-        font-size: 150%;
     }
 }

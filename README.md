@@ -14,3 +14,7 @@ además de "programitas" para practicar JavaScript.
 5. Gatos: hace uso de [The Cat API](https://thecatapi.com) para mostrar imágenes de gatos
 6. GitHub: lleva a mi perfil de GitHub
 7. Pecera
+
+## Por hacer
+
+- Arreglar algunas media queries: especialmente en el tres en raya y en el conversor
